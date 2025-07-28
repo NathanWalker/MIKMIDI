@@ -1,0 +1,163 @@
+framework module MIKMIDI {
+    umbrella header "MIKMIDI.h"
+    
+    // Core MIDI object wrapper
+    header "MIKMIDIObject.h"
+    
+    // MIDI port
+    header "MIKMIDIPort.h"
+    header "MIKMIDIInputPort.h"
+    header "MIKMIDIOutputPort.h"
+    
+    // MIDI Device support
+    header "MIKMIDIDevice.h"
+    header "MIKMIDIDeviceManager.h"
+    header "MIKMIDIConnectionManager.h"
+    header "MIKMIDIEntity.h"
+    
+    // Endpoints
+    header "MIKMIDIEndpoint.h"
+    header "MIKMIDIDestinationEndpoint.h"
+    header "MIKMIDISourceEndpoint.h"
+    header "MIKMIDIClientDestinationEndpoint.h"
+    header "MIKMIDIClientSourceEndpoint.h"
+    
+    // MIDI Commands/Messages
+    header "MIKMIDICommand.h"
+    header "MIKMIDIChannelVoiceCommand.h"
+    header "MIKMIDINoteCommand.h"
+    header "MIKMIDIChannelPressureCommand.h"
+    header "MIKMIDIControlChangeCommand.h"
+    header "MIKMIDIProgramChangeCommand.h"
+    header "MIKMIDIPitchBendChangeCommand.h"
+    header "MIKMIDINoteOnCommand.h"
+    header "MIKMIDINoteOffCommand.h"
+    header "MIKMIDIPolyphonicKeyPressureCommand.h"
+    header "MIKMIDISystemExclusiveCommand.h"
+    header "MIKMIDISystemMessageCommand.h"
+    header "MIKMIDISystemKeepAliveCommand.h"
+    
+    // MIDI Sequence/File support
+    header "MIKMIDISequence.h"
+    header "MIKMIDITrack.h"
+    
+    // MIDI Events
+    header "MIKMIDIEvent.h"
+    header "MIKMIDITempoEvent.h"
+    header "MIKMIDINoteEvent.h"
+    
+    // Channel Events
+    header "MIKMIDIChannelEvent.h"
+    header "MIKMIDIPolyphonicKeyPressureEvent.h"
+    header "MIKMIDIControlChangeEvent.h"
+    header "MIKMIDIProgramChangeEvent.h"
+    header "MIKMIDIChannelPressureEvent.h"
+    header "MIKMIDIPitchBendChangeEvent.h"
+    
+    // Meta Events
+    header "MIKMIDIMetaEvent.h"
+    header "MIKMIDIMetaCopyrightEvent.h"
+    header "MIKMIDIMetaCuePointEvent.h"
+    header "MIKMIDIMetaInstrumentNameEvent.h"
+    header "MIKMIDIMetaKeySignatureEvent.h"
+    header "MIKMIDIMetaLyricEvent.h"
+    header "MIKMIDIMetaMarkerTextEvent.h"
+    header "MIKMIDIMetaSequenceEvent.h"
+    header "MIKMIDIMetaTextEvent.h"
+    header "MIKMIDIMetaTimeSignatureEvent.h"
+    header "MIKMIDIMetaTrackSequenceNameEvent.h"
+    
+    // Sequencing and Synthesis
+    header "MIKMIDISequencer.h"
+    header "MIKMIDIMetronome.h"
+    header "MIKMIDIClock.h"
+    header "MIKMIDIPlayer.h"
+    header "MIKMIDIEndpointSynthesizer.h"
+    header "MIKMIDISynthesizer.h"
+    header "MIKMIDISynthesizerInstrument.h"
+    
+    // MIDI Mapping
+    header "MIKMIDIMapping.h"
+    header "MIKMIDIMappingItem.h"
+    header "MIKMIDIMappableResponder.h"
+    header "MIKMIDIMappingManager.h"
+    header "MIKMIDIMappingGenerator.h"
+    header "MIKMIDIMappingXMLParser.h"
+    
+    // Intra-application MIDI command routing
+    header "NSUIApplication+MIKMIDI.h"
+    header "MIKMIDIResponder.h"
+    header "MIKMIDICommandThrottler.h"
+    header "MIKMIDICommandScheduler.h"
+    
+    // Utilities
+    header "MIKMIDIUtilities.h"
+    header "MIKMIDIErrors.h"
+    header "MIKMIDICompilerCompatibility.h"
+    header "MIKMIDIEventIterator.h"
+    header "MIKMIDITransmittable.h"
+    
+    // Protected/Internal headers that might be needed for subclassing
+    header "MIKMIDITrack_Protected.h"
+    header "MIKMIDIPrivate.h"
+    
+    export *
+    module * { export * }
+    
+    // Explicit modules for subclassing support
+    explicit module MIKMIDICommandSubclass {
+        header "MIKMIDICommand_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDIEventSubclass {
+        header "MIKMIDIEvent_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDIMetaEventSubclass {
+        header "MIKMIDIMetaEvent_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDISynthesizerSubclass {
+        header "MIKMIDISynthesizer_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDIObjectSubclass {
+        header "MIKMIDIObject_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDIChannelVoiceCommandSubclass {
+        header "MIKMIDIChannelVoiceCommand_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDINoteCommandSubclass {
+        header "MIKMIDINoteCommand_SubclassMethods.h"
+        export *
+    }
+    
+    explicit module MIKMIDIPortSubclass {
+        header "MIKMIDIPort_SubclassMethods.h"
+        export *
+    }
+    
+    // Private headers for advanced usage
+    explicit module MIKMIDIControlChangePrivate {
+        header "MIKMIDIControlChangeCommand+Private.h"
+        export *
+    }
+    
+    explicit module MIKMIDISequencePrivate {
+        header "MIKMIDISequence+MIKMIDIPrivate.h"
+        export *
+    }
+    
+    explicit module MIKMIDISequencerPrivate {
+        header "MIKMIDISequencer+MIKMIDIPrivate.h"
+        export *
+    }
+} 
