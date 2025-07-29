@@ -25,9 +25,7 @@ let package = Package(
             cSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath("../Framework"),
-                .define("MIKMIDI_SWIFT_PACKAGE", to: "1"),
-                // libxml2 header search path for iOS/visionOS
-                .unsafeFlags(["-I/usr/include/libxml2"], .when(platforms: [.iOS, .visionOS, .macCatalyst]))
+                .define("MIKMIDI_SWIFT_PACKAGE", to: "1")
             ],
             linkerSettings: [
                 .linkedFramework("CoreMIDI"),
